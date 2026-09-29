@@ -1,0 +1,51 @@
+name: Config Lint
+
+# Validates RectangleConfig.json parses and matches the shape Rectangle's own Config.swift
+# expects: bundleId, version, shortcuts (name -> keyCode/modifierFlags) and defaults (key ->
+# CodableDefault with exactly one of bool/int/float/double/string set).
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Validate Rectangle config
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Validate RectangleConfig.json shape
+        run: |
+          python3 - <<'PYEOF'
+          import json
+
+          with open("RectangleConfig.json") as f:
+              config = json.load(f)
+
+          assert config["bundleId"] == "com.knollsoft.Rectangle"
+          assert isinstance(config["version"], str)
+
+          for name, shortcut in config["shortcuts"].items():
+              assert isinstance(shortcut["keyCode"], int), f"{name}: keyCode must be an int"
+              assert isinstance(shortcut["modifierFlags"], int), f"{name}: modifierFlags must be an int"
+              assert set(shortcut.keys()) == {"keyCode", "modifierFlags"}, f"{name}: unexpected keys"
+
+          codable_fields = {"bool", "int", "float", "double", "string"}
+          for key, value in config["defaults"].items():
+              present = [k for k in value if k in codable_fields]
+              assert len(present) == 1, f"{key}: must set exactly one of {codable_fields}"
+              assert set(value.keys()) <= codable_fields, f"{key}: unexpected keys"
+
+          print("RectangleConfig.json is valid")
+          PYEOF
