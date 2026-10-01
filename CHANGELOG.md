@@ -14,3 +14,8 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Initial release: an importable Rectangle config with the default shortcuts and custom bindings
 - Setup, reference and shortcut guides
 - CI that validates the config shape
+- `ACCESSIBILITY.md`: keyboard-driven window layout without precise dragging.
+
+### Changed
+
+- Tidied code comments and the contributor guide.

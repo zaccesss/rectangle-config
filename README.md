@@ -30,5 +30,6 @@ Rectangle and confirm the import dialog it shows.
 
 | Path | Contents |
 | --- | --- |
+| [`ACCESSIBILITY.md`](ACCESSIBILITY.md) | Keyboard-driven window layout without precise dragging |
 | [`RectangleConfig.json`](RectangleConfig.json) | The importable Rectangle configuration |
 | [`guides/`](guides/) | Setup walkthrough, full reference and the complete shortcut list |
