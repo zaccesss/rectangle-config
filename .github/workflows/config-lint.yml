@@ -1,6 +1,6 @@
 name: Config Lint
 
-# Validates RectangleConfig.json parses and matches the shape Rectangle's own Config.swift
+# validates RectangleConfig.json parses and matches the shape Rectangle's own Config.swift
 # expects: bundleId, version, shortcuts (name -> keyCode/modifierFlags) and defaults (key ->
 # CodableDefault with exactly one of bool/int/float/double/string set).
 
