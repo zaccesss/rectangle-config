@@ -9,6 +9,10 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- `ACCESSIBILITY.md`: a note that the settings are preferences, a callout for the VoiceOver modifier collision and a link to the shared accessibility statement.
+
 ### Added
 
 - Initial release: an importable Rectangle config with the default shortcuts and custom bindings
