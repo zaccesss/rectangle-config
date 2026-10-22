@@ -9,9 +9,7 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-### Changed
-
-- `ACCESSIBILITY.md`: a note that the settings are preferences, a callout for the VoiceOver modifier collision and a link to the shared accessibility statement.
+## [0.0.1] - 2026-10-22
 
 ### Added
 
@@ -22,4 +20,5 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
+- `ACCESSIBILITY.md`: a note that the settings are preferences, a callout for the VoiceOver modifier collision and a link to the shared accessibility statement.
 - Tidied code comments and the contributor guide.
