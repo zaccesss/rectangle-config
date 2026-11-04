@@ -10,5 +10,3 @@ This repository's Rectangle configuration has moved to the `apps/rectangle` fold
 
 > [!NOTE]
 > This repository is archived and read-only.
-
-![The first lines of RectangleConfig.json as they look in the Zacess Deep Contrast Dark theme](docs/images/preview.png)
